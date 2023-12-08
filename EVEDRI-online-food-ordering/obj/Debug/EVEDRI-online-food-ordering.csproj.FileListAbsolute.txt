@@ -1,0 +1,14 @@
+C:\QuickBites\EVEDRI-online-food-ordering\bin\Debug\EVEDRI-online-food-ordering.exe.config
+C:\QuickBites\EVEDRI-online-food-ordering\bin\Debug\EVEDRI-online-food-ordering.exe
+C:\QuickBites\EVEDRI-online-food-ordering\bin\Debug\EVEDRI-online-food-ordering.pdb
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI-online-food-ordering.csproj.AssemblyReference.cache
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI_online_food_ordering.Register.resources
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI_online_food_ordering.Homepage.resources
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI_online_food_ordering.Form1.resources
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI_online_food_ordering.MainHomePage.resources
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI_online_food_ordering.OrderingForm.resources
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI_online_food_ordering.Properties.Resources.resources
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI-online-food-ordering.csproj.GenerateResource.cache
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI-online-food-ordering.csproj.CoreCompileInputs.cache
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI-online-food-ordering.exe
+C:\QuickBites\EVEDRI-online-food-ordering\obj\Debug\EVEDRI-online-food-ordering.pdb

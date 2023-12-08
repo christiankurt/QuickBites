@@ -99,7 +99,7 @@ namespace EVEDRI_online_food_ordering
             {
                 DateTime date = DateTime.Now;
                 double quantifiedPrice = Convert.ToDouble(price) * orderQuantity;
-                this.listBox1.Items.Add($"{orderItemName} ({orderQuantity}) - ₱{quantifiedPrice}");
+                this.listBox1.Items.Add($"{orderItemName} ({orderQuantity}) - ₱{quantifiedPrice}.00");
                 totalPrice += quantifiedPrice;
                 this.label2.Text = totalPrice.ToString();
                 // preparing orders to send to database
@@ -132,12 +132,12 @@ namespace EVEDRI_online_food_ordering
             int y_coord = 140;
             foreach (var item in listBox1.Items)
             {
-                e.Graphics.DrawString(item.ToString(), font, brush, new Point(100, y_coord));
+                e.Graphics.DrawString(item.ToString() + ".00", font, brush, new Point(100, y_coord));
                 y_coord += 20;
             }
             e.Graphics.DrawString(line, font, brush, new Point(100, y_coord));
             y_coord += 20;
-            e.Graphics.DrawString($"Total: {totalPrice}", font, brush, new Point(100, y_coord));
+            e.Graphics.DrawString($"Total: ₱{totalPrice}.00", font, brush, new Point(100, y_coord));
         }
 
         private void button5_Click(object sender, EventArgs e)
