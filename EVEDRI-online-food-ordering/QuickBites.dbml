@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuickBites" Class="QuickBitesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-RCHA6075J8T\SQLEXPRESS;Initial Catalog=QuickBites;Integrated Security=True" SettingsObjectName="EVEDRI_online_food_ordering.Properties.Settings" SettingsPropertyName="QuickBitesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="queue_number" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="order_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="order_item" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="order_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="quantified_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Product_Order" Member="Product" ThisKey="order_item" OtherKey="item" Type="Product" IsForeignKey="true" />
+      <Association Name="UserAccount_Order" Member="UserAccount" ThisKey="customer_id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserDetails" Member="UserDetails">
+    <Type Name="UserDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="customername" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dateofbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="homeaddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="contactnumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="UserAccount_UserDetail" Member="UserAccount" ThisKey="id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="id" Type="System.String" DbType="NVarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="category" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="img" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Product_Order" Member="Orders" ThisKey="item" OtherKey="order_item" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccounts" Member="UserAccounts">
+    <Type Name="UserAccount">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="UserAccount_Order" Member="Orders" ThisKey="id" OtherKey="customer_id" Type="Order" />
+      <Association Name="UserAccount_UserDetail" Member="UserDetail" ThisKey="id" OtherKey="id" Type="UserDetail" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

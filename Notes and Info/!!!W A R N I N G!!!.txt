@@ -1,0 +1,6 @@
+WARNING!!!
+
+No self-made classes, methods, and functions were used.
+Code is hard to read (but still works).
+
+NOTE: Preferred QuickBites than EVERDRI

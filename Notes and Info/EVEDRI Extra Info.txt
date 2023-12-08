@@ -1,0 +1,25 @@
+
+FOOD ORDERING SYSTEM
+
+LOGIN FORM
+MAIN HOMEPAGE:
+- Dashboard (WITH DATABASE)
+- Order (WITH DATABASE)
+- Browse Foods (DISPLAY ONLY - NO DATABASE NEEDED)
+- About
+- Log out
+
+
+Create Table For Accounts:
+- username
+- password
+
+Create Another Table For Food:
+- course meal
+- drinks
+- specialties
+
+Create Another Table for Orders:
+- item ordered
+- customer
+- price

@@ -1,0 +1,27 @@
+
+SINGLE FORM STYLE - USING PARENT & CHILD CLASS
+
+PAGES:
+Home(Landing) Page			[ NO DATABASE ]
+Start Ordering / Products Page		[ DATABASE ]
+Login Form/Page				[ DATABASE ]
+Register Form/Page			[ DATABASE ]
+
+
+REGISTER:
+1. Customername
+2. Gender
+3. Date of birth
+4. Address
+5. Phone number
+6. Email
+7. Username
+8. Password
+
+PRODUCTS:
+1. Course Meals
+2. Drinks
+3. Specialties
+3.1. Sandwiches
+3.2. Desserts
+

@@ -1,0 +1,5 @@
+These images are not directly linked to the winforms picture boxes
+These images are first inserted as a blob in the database Products table
+Then dynamically retrieved by the Products/Menu page for display
+
+If you check the Homepage.cs [Design] file, you will see that all of the food items are placeholders (empty)

@@ -1,0 +1,1 @@
+Update all of these scripts if any new tables (or default accounts, etc.)are added
