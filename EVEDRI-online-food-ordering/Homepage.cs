@@ -39,21 +39,33 @@ namespace EVEDRI_online_food_ordering
             courseMealList.AddRange(courseMeal);
             drinksList.AddRange(drinks);
             specialtiesList.AddRange(specialties);
-            List<double> courseMealListPrice = new List<double>();
-            List<double> drinksListPrice = new List<double>();
-            List<double> specialtiesListPrice = new List<double>();
+            // Prices
             var courseMealPrice = from item in db.Products.ToList()
-                             where item.category == "Course Meal"
-                             select item.price;
+                                  where item.category == "Course Meal"
+                                  select item.price;
             var drinksPrice = from item in db.Products.ToList()
-                         where item.category == "Drinks"
-                         select item.price;
-            var specialtiesPrice = from item in db.Products.ToList()
-                              where item.category == "Specialties"
+                              where item.category == "Drinks"
                               select item.price;
-            courseMealListPrice.AddRange(courseMealPrice);
-            drinksListPrice.AddRange(drinksPrice);
-            specialtiesListPrice.AddRange(specialtiesPrice);
+            var specialtiesPrice = from item in db.Products.ToList()
+                                   where item.category == "Specialties"
+                                   select item.price;
+            try
+            {
+                List<double?> courseMealListPrice = new List<double?>();
+                List<double?> drinksListPrice = new List<double?>();
+                List<double?> specialtiesListPrice = new List<double?>();
+                courseMealListPrice.AddRange((IEnumerable<double?>)courseMealPrice);
+                drinksListPrice.AddRange((IEnumerable<double?>)drinksPrice);
+                specialtiesListPrice.AddRange((IEnumerable<double?>)specialtiesPrice);
+            } catch
+            {
+                List<double> courseMealListPrice = new List<double>();
+                List<double> drinksListPrice = new List<double>();
+                List<double> specialtiesListPrice = new List<double>();
+                courseMealListPrice.AddRange((IEnumerable<double>)courseMealPrice);
+                drinksListPrice.AddRange((IEnumerable<double>)drinksPrice);
+                specialtiesListPrice.AddRange((IEnumerable<double>)specialtiesPrice);
+            }
             // dynamic products page/food menu
             int groupBoxLabelIndex = 0;
             foreach (Control c in groupBox1.Controls)
@@ -68,7 +80,7 @@ namespace EVEDRI_online_food_ordering
                             groupBoxLabelIndex++;
                         } else
                         {
-                            d.Text = "₱" + courseMealListPrice.ElementAt(groupBoxLabelIndex).ToString() + ".00";
+                            d.Text = $"₱{courseMealPrice.ElementAt(groupBoxLabelIndex).ToString()}.00";
                         }
                     }
                 }
@@ -87,7 +99,7 @@ namespace EVEDRI_online_food_ordering
                         }
                         else
                         {
-                            d.Text = "₱" + drinksPrice.ElementAt(groupBoxLabelIndex).ToString() + ".00";
+                            d.Text = $"₱{drinksPrice.ElementAt(groupBoxLabelIndex).ToString()}.00";
                         }
                     }
                 }
@@ -106,7 +118,7 @@ namespace EVEDRI_online_food_ordering
                         }
                         else
                         {
-                            d.Text = "₱" + specialtiesPrice.ElementAt(groupBoxLabelIndex).ToString() + ".00";
+                            d.Text = $"₱{specialtiesPrice.ElementAt(groupBoxLabelIndex).ToString()}.00";
                         }
                     }
                 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuickBites" Class="QuickBitesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-RCHA6075J8T\SQLEXPRESS;Initial Catalog=QuickBites;Integrated Security=True" SettingsObjectName="EVEDRI_online_food_ordering.Properties.Settings" SettingsPropertyName="QuickBitesConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-63Q69S63RJL\SQLEXPRESS;Initial Catalog=QuickBites;Integrated Security=True" SettingsObjectName="EVEDRI_online_food_ordering.Properties.Settings" SettingsPropertyName="QuickBitesConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Orders" Member="Orders">
     <Type Name="Order">
       <Column Name="queue_number" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -29,7 +29,7 @@
       <Column Name="id" Type="System.String" DbType="NVarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="category" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="item" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="img" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="Product_Order" Member="Orders" ThisKey="item" OtherKey="order_item" Type="Order" />
     </Type>

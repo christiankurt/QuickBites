@@ -45,7 +45,7 @@ namespace EVEDRI_online_food_ordering
     #endregion
 		
 		public QuickBitesDataContext() : 
-				base(global::EVEDRI_online_food_ordering.Properties.Settings.Default.QuickBitesConnectionString, mappingSource)
+				base(global::EVEDRI_online_food_ordering.Properties.Settings.Default.QuickBitesConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -630,7 +630,7 @@ namespace EVEDRI_online_food_ordering
 		
 		private string _item;
 		
-		private double _price;
+		private System.Nullable<double> _price;
 		
 		private System.Data.Linq.Binary _img;
 		
@@ -646,7 +646,7 @@ namespace EVEDRI_online_food_ordering
     partial void OncategoryChanged();
     partial void OnitemChanging(string value);
     partial void OnitemChanged();
-    partial void OnpriceChanging(double value);
+    partial void OnpriceChanging(System.Nullable<double> value);
     partial void OnpriceChanged();
     partial void OnimgChanging(System.Data.Linq.Binary value);
     partial void OnimgChanged();
@@ -718,8 +718,8 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Float NOT NULL")]
-		public double price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Float")]
+		public System.Nullable<double> price
 		{
 			get
 			{
